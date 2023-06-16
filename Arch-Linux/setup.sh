@@ -10,7 +10,7 @@
 #
 # Below is a list of all the packages I will be using. If you want to know what a particular package does feel free to google it:
 #
-# hyperland-bin
+# hyperland
 # kitty
 # waybar-hyprland
 # swaybg
@@ -56,19 +56,21 @@ makepkg -si
 
 ### Install AUR packages###
 echo -e "Installing AUR packages"
-yay -S --noconfirm hyprland-bin kitty waybar-hyprland swaybg \
-	swaylock-effects wofi wlogout mako thunar \
-	ttf-jetbrains-mono-nerd noto-fonts-emoji \
-	polkit-gnome python-requests starship\
-	swappy graim slurp pamixer brightnessctl gvfs \
-	bluez bluez-utils lxapperance xfce4-settings \
+yay -S --noconfirm kitty waybar-hyprland \
+	swaylock-effects wlogout \
 	xdg-desktop-portal-hyprland-git balena-etcher \
-    slack-desktop xdman google-chrome coreimage ly \ 
+        slack-desktop xdman google-chrome coreimage ly \ 
 	batsignal visual-studio-code-bin 
 ### Install packages with pacman
 echo -e "Installing pacman packages"
 
-sudo pacman -S --noconfirm discord firefox obs-studio vlc telegram-desktop
+sudo pacman -S --noconfirm hyprland mako swaybg wofi kitty discord firefox  \
+                noto-fonts-emoji obs-studio vlc telegram-desktop thunar ttf-jetbrains-mono-nerd \
+		noto-fonts-emoji polkit-gnome python-requests swappy grim slurp \
+  		pamixer brightnessctl gvfs bluez bluez-utils lxapperance xfce4-settings \
+		
+  		
+		
 
 ### Install and start bluetooth and Network manager services
 sudo pacman --noconfirm bluez bluez-util networkmanager
