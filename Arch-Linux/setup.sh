@@ -1,14 +1,14 @@
 #!/bin/bash
 #
 # This script is meant to be a post-install step after installing arch
-# either manually or using the archinstall script.
+# either manually or using the arch install script.
 #
 # This particular script is set for my use case and my system. If you intended to use this on your PC, please go through this script first and make sure everything is to your liking.
 #
-# I will be using Hyprland as my desktop enviornment, along with ly as my
+# I will be using Hyprland as my desktop environment, along with ly as my
 # display Manager
 #
-# Below is a list of all the packages I will be using. If you want to know what a particular package doesn feel free to google it:
+# Below is a list of all the packages I will be using. If you want to know what a particular package does feel free to google it:
 #
 # hyperland-bin
 # kitty
@@ -48,6 +48,11 @@
 # ly
 # batsignal
 
+### Install git and yay
+sudo pacman -S --noconfirm git
+git clone https://aur.archlinux.org/yay.git
+cd yay 
+makepkg -si
 
 ### Install AUR packages###
 echo -e "Installing AUR packages"
@@ -65,7 +70,8 @@ echo -e "Installing pacman packages"
 
 sudo pacman -S --noconfirm discord firefox obs-studio vlc telegram-desktop
 
-### Start bluetooth and Network manager services
+### Install and start bluetooth and Network manager services
+sudo pacman --noconfirm bluez bluez-util networkmanager
 echo -e "starting bluetooh.servcie"
 sudo systemctl enable --now bluetooth.service
 sleep 2
