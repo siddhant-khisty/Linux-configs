@@ -89,6 +89,11 @@ systemctl enable --now --user batsignal.service
 echo -e "Starting ly Display manager"
 sudo systemctl enable --now ly.service
 
+### Create required directories
+
+mkdir -P ~/.config
+mkdir -P ~/.themes
+
 ### Copying config files
 echo -e "Copying config files to ~/.config"
 
